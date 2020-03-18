@@ -1,0 +1,13 @@
+<view class="page">
+<form report-submit="true" bindsubmit="getFormId">
+<view class="userinfo"  style='margin-top:30%;'>
+     
+    <button class="button" type='primary' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" plain="{{plain}}" bindgetuserinfo="getUserInfo" lang='zh_CN'  form-type="submit"> 登录 </button>
+    
+    <block wx:else>
+      <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">欢迎，{{userInfo.nickName}}</text>
+    </block>
+  </view> 
+  </form>
+</view>

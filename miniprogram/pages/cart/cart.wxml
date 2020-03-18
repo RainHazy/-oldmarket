@@ -1,0 +1,20 @@
+<scroll-view scroll-y>
+   <view class="product" wx:for="{{productList}}" wx:key="{{index}}">
+       <image src="{{item.imgFileID[0]}}" mode="widthFix"></image>
+       <view class="info">
+          <text>{{item.name}}</text>
+          <text class="price">￥{{item.price}}</text>
+       </view>
+       <checkbox-group id="{{item.ids}}" bindchange="checkboxChange">
+          <checkbox value="{{item.ids}}"></checkbox>
+       </checkbox-group>
+   </view>
+</scroll-view>
+
+<view class="bottom">
+   <button bindtap="buy">
+       付款
+       <text>￥{{priceSum}}</text>
+   </button>
+   <button bindtap="del">删除指定商品</button>
+</view>

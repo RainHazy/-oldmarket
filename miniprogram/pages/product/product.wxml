@@ -1,0 +1,25 @@
+<!-- banner -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<scroll-view scroll-y="true">
+  <view class="detail">
+    <text class="title">{{product["name"]}}</text>
+    <text class="price">￥{{product["price"]}}</text>
+  </view>
+  <view class="separate"></view>
+  <!-- sku选择 -->
+  <text >新旧程度：  {{product["degree"]}}</text>
+  <view class="separate"></view>
+  <text>商品详情</text>
+  <text>{{product['detail']}}</text>
+</scroll-view>
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+  <button class="button-green" bindtap="addCar" formType="submit">{{car}}</button>
+  <button class="button-red" bindtap="immeBuy" formType="submit">立即购买</button>
+</view>

@@ -1,0 +1,108 @@
+/* 容器 */
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  width: 15%;
+  background: #fdfffdc2;
+  text-align: center;
+  overflow: scroll;
+}
+
+.menu .item_text {
+  height: 30px;
+  line-height: 30px;
+  padding: 20px 0;
+  border-bottom: 1px solid #dedede;
+}
+
+.menu .item_text.active {
+  /*背景色变成白色*/
+  background: rgb(165, 164, 164);
+  color: rgb(238, 91, 91);
+}
+
+.isolation {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  /*宽度75%，高度占满，并使用百分比布局*/
+  width: 4%;
+  height: 100%;
+  background: #b4b6b4c2;
+}
+
+.list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex: 1;
+  /*宽度75%，高度占满，并使用百分比布局*/
+  width: 80%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #fff;
+  overflow: scroll;
+}
+ /*按比例一行设置显示数*/
+.productLists {
+  position: relative;
+  float: left;
+  padding: 20px 10px;
+  width: 50%;
+  box-sizing: border-box;
+}
+/*分割线*/
+.productLists:before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-right: 1px solid #d9d9d9;
+  color: #d9d9d9;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+.productLists:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #d9d9d9;
+  color: #d9d9d9;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.list .productList text {
+  display: block;
+  margin-bottom: 0px;
+  font-size: 10px;
+  /*设置文字居中*/
+  text-align: right;
+  /*设置文字溢出部分为...*/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+image {
+  width: 250rpx;
+}

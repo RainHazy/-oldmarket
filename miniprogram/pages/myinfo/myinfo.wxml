@@ -1,0 +1,43 @@
+<!--miniprogram/pages/myinfo/myinfo.wxml-->
+  <!--商品名称-->
+  <view class='title'>
+    <view class='title_text'>
+      <text>学校:</text>
+      <block wx:if="{{mode}}">{{school}}</block>
+      <block wx:else><input name="school" type='text' value='{{school}}' bindblur='schoolText'></input></block>
+      
+    </view>
+  </view>
+  <!--商品价格-->
+  <view class='title'>
+    <view class='title_text'>
+      <text>姓名:</text>
+      <block wx:if="{{mode}}">{{name}}</block>
+      <block wx:else><input name="name" type='text' value='{{name}}' bindblur='nameText'></input></block>
+    </view>
+  </view>
+  <!--商品信息-->
+  <view class='title'>
+    <view class='title_text'>
+      <text>学号:</text>
+      <block wx:if="{{mode}}">{{studentID}}</block>
+      <block wx:else><input name="studentID" type='text' value='{{studentID}}' bindblur='studentIDText'></input></block>
+    </view>
+  </view>
+ <!--商品信息-->
+  <view class='title'>
+    <view class='title_text'>
+      <text>电话:</text>
+      <block wx:if="{{mode}}">{{phone}}</block>
+      <block wx:else><input name="phone" type='text' value='{{phone}}' bindblur='phoneText'></input></block>
+    </view>
+  </view>
+  <!--商品信息-->
+  <view class='title'>
+    <view class='title_text'>
+      <text>地址:</text>
+      <block wx:if="{{mode}}">{{address}}</block>
+      <block wx:else><input name="address" type='text' value='{{address}}' bindblur='addressText'></input></block>
+    </view>
+  </view>
+  <button form-type='submit' class='sureRelease' bindtap="modify">{{undertext}}</button>

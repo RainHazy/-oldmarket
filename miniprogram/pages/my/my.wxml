@@ -1,0 +1,43 @@
+<view class="userInfo">
+  <view class="heard">
+    <open-data type="userAvatarUrl" ></open-data>
+  </view>
+  <view class="account">
+   <open-data type="userNickName"></open-data>
+  </view>
+</view>
+
+<view class="list">
+
+  <view class="order" bindtap="myBuy">
+      <image src="/images/temp/share_moment.png" mode="widthFix"></image>
+      <view class="order-detail">
+        <text>我的订单</text>
+        <text> > </text>
+      </view>
+  </view>
+  <view class="order" bindtap="myGood">
+      <image src="/images/temp/share_qq.png"  mode="widthFix"></image>
+      <view class="order-detail">
+        <text>我的商品</text>
+        <text> > </text>
+      </view>
+  </view>
+  <view class="order" bindtap="sellGood">
+      <image src="/images/temp/share_qqzone.png" mode="widthFix"></image>
+        <view class="order-detail">
+        <text>商品上架</text>
+        <text> > </text>
+      </view>
+  </view>
+  <view class="order" bindtap="myInfo">
+      <image src="/images/temp/share_wechat.png" mode="widthFix"></image>
+      <view class="order-detail">
+        <text>个人中心</text>
+        <text> > </text>
+      </view>
+  </view>
+   
+
+</view>
+

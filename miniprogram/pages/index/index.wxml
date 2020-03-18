@@ -1,0 +1,25 @@
+<!-- 容器 -->
+<view class="container">
+  <!-- 菜单 -->
+  <view class="menu">
+    <!-- 展示分类 -->
+    <view id="{{item.id}}" class="classtype" bindtap="searchTab" wx:for="{{classType}}" wx:key="index">
+      <view class="item_text {{num == item.id ? 'active' : ''}}"  data-id="{{item.id}}">{{item.name}}</view>
+    </view>
+  </view>
+  <view class="isolation"></view>
+  <!-- 产品列表 -->
+  <view class="list">
+    <view class="productList">
+      <block wx:for="{{num ==0?productAll:productList}}" wx:key="index">      
+        <view class="productLists" bindtap='productDetails' data-index="{{index}}">
+          <image src="{{item.imgFileID[0]}}" mode="widthFix"></image>
+          <view class="info">
+            <text>{{item.name}} </text>
+            <text>¥{{item.price}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

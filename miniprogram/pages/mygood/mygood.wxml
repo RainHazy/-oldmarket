@@ -1,0 +1,88 @@
+<!-- 切换栏 -->
+<view class="swiper-tab">
+  <block wx:for="{{swipertab}}" wx:key="sptab">
+    <view class="swiper-tab-list {{currtab == item.index ? 'on' : ''}}" data-current="{{item.index}}" bindtap="tabSwitch">{{item.name}}</view>
+  </block>
+</view>
+ 
+<swiper current="{{currtab}}" class="swiper-box" duration="300" style="height:{{deviceH+60}}px" >
+<!-- 销售中 -->
+  <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view  class="orderDetails" wx:for="{{waitPrice}}" wx:key="index">
+        <view class="orderListTitle">
+          <text class="userName">{{item.name}}</text>
+          <button class="orderStatus" bindtap="toModify" data-index="{{index}}">去修改</button>
+        </view>
+        <view class="orderListDetails">
+          <view class="productImg">
+            <image src="{{item.imgFileID[0]}}" background-size="cover"></image>
+          </view>
+          <view class="productInfo">
+            <view class="productTitle">上架时间: {{item.sellTime}}</view>
+            <text class="productTitle">拍下时间：{{item.buyTime}}</text>
+            <text class="productPrice">买家：{{item.buyer}}</text>
+          </view>
+        </view>
+        <view class="productCount">
+          <view>
+            <text>合计：￥{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <!-- 待发货 -->
+  <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view  class="orderDetails" wx:for="{{waitProduct}}" wx:key="index">
+        <view class="orderListTitle">
+          <text class="userName">{{item.name}}</text>
+          <button wx:if="{{item.shipTime==''}}"class="orderStatus" bindtap="toConfirm" data-value="{{waitProduct[index]}}">确认发货</button>
+          <button wx:else class="orderStatus">已发货</button>
+        </view>
+        <view class="orderListDetails">
+          <view class="productImg">
+            <image src="{{item.imgFileID[0]}}" background-size="cover"></image>
+          </view>
+          <view class="productInfo">
+            <view class="productTitle">付款时间: {{item.buyTime}}</view>
+            <text class="productTitle">收货地址：{{item.receiveAddress}}</text>
+            <text class="productPrice">买家：{{item.buyer}}</text>
+          </view>
+        </view>
+        <view class="productCount">
+          <view>
+            <text>合计：￥{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <!-- 已完成 -->
+  <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view class="orderDetails" wx:for="{{alreadyProduct}}" wx:key="index">
+        <view class="orderListTitle">
+           <text class="userName">{{item.name}}</text>
+          <text class="orderStatus">{{item.owner}}</text>
+        </view>
+        <view class="orderListDetails">
+          <view class="productImg">
+            <image src="{{item.imgFileID[0]}}" background-size="cover"></image>
+          </view>
+          <view class="productInfo">
+            <view class="productTitle">完成时间：{{item.shipTime}}</view>
+            <text class="productTitle">学校：{{item.school}}</text>
+            <text class="productPrice">买家：{{item.buyer}}</text>
+          </view>
+        </view>
+        <view class="productCount">
+          <view>
+             <text>合计：￥{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
